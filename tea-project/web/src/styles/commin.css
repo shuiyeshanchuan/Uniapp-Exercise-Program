@@ -1,0 +1,39 @@
+
+
+
+
+.el-header .el-menu-item{
+    color: #000;
+    background-color: #fff !important;
+}
+
+
+.el-header .el-menu-item.is-active{
+    color: #000;
+}
+
+.el-menu-item {
+    color: #Fff;
+    background-color: #000 !important;
+}
+
+.el-menu-item:hover,
+.el-menu-item:hover i {
+    color: #409EFF;
+    background-color: #000;
+}
+.el-submenu__title:hover {
+    background-color: #000;
+}
+.el-submenu__title {
+    background-color: #000;
+    color: #fff;
+}
+.is-active .el-submenu__title,
+.is-active .el-submenu__title i{
+    color: #409EFF !important;
+}
+
+.demo-drawer_footer{
+    margin-bottom: 15px;
+}

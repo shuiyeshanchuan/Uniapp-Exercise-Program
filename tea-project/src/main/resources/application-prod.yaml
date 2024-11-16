@@ -1,0 +1,14 @@
+#生产环境
+server:
+  ip: xxx
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://xxx:3306/blog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: xxx
+    password: xxx
+
+files:
+  uploads:
+    path: /www/wwwroot/xxx/upload/

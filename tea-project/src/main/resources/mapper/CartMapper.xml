@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.template.mapper.CartMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.project.template.entity.Cart">
+                <result column="id" property="id" />
+                    <result column="uid" property="uid" />
+                    <result column="pid" property="pid" />
+                    <result column="number" property="number" />
+            <result column="tprice" property="tprice" />
+        </resultMap>
+
+    <resultMap type="com.project.template.entity.Cart" id="CartMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="uid" column="uid" jdbcType="INTEGER"/>
+        <result property="pid" column="pid" jdbcType="INTEGER"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="tprice" column="ctprice"></result>
+        <!--   映射cart集合     -->
+        <result property="product.id" column="ppid"></result>
+        <result property="product.pname" column="pname"></result>
+        <result property="product.typeid" column="typeid"></result>
+        <result property="product.tprice" column="tprice"></result>
+        <result property="product.tintroduce" column="tintroduce"></result>
+        <result property="product.pimageurl" column="pimageurl"></result>
+    </resultMap>
+
+
+    <!--  queryCartByUid  -->
+<!--    <select id="queryCartByUid" resultMap="CartMap">-->
+<!--        SELECT-->
+<!--            c.id id,-->
+<!--            c.uid uid,-->
+<!--            c.pid pid,-->
+<!--            c.number number,-->
+<!--            c.tprice ctprice,-->
+<!--            p.id ppid,-->
+<!--            p.pname pname,-->
+<!--            p.typeid typeid,-->
+<!--            p.tprice tprice,-->
+<!--            p.tintroduce tintroduce,-->
+<!--            p.pimageurl pimageurl-->
+<!--        from cart c,product p-->
+<!--        where c.pid = p.id-->
+<!--          and c.uid = #{uid}-->
+<!--    </select>-->
+
+    <!-- queryCartByUid -->
+    <select id="queryCartByUid" resultMap="CartMap">
+        SELECT
+            c.id AS id,
+            c.uid AS uid,
+            c.pid AS pid,
+            c.number AS number,
+            c.tprice AS ctprice,
+            p.id AS ppid,
+            p.pname AS pname,
+            p.typeid AS typeid,
+            p.tprice AS tprice,
+            p.tintroduce AS tintroduce,
+            p.pimageurl AS pimageurl
+        FROM cart c
+                 JOIN product p ON c.pid = p.id
+        WHERE c.uid = #{uid}
+    </select>
+
+</mapper>

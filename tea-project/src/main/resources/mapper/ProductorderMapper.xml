@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.template.mapper.ProductorderMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.project.template.entity.Productorder">
+                <result column="id" property="id" />
+                    <result column="oid" property="oid" />
+                    <result column="pid" property="pid" />
+                    <result column="number" property="number" />
+                    <result column="price" property="price" />
+
+            <!-- 添加产品信息 -->
+            <result column="pname" property="pname"/>
+            <result column="pimageurl" property="pimageurl"/>
+        </resultMap>
+
+    <select id="selectPage" resultType="com.project.template.entity.Productorder">
+        SELECT
+        po.*,
+        p.pname as pname,
+        p.pimageurl as pimageurl
+        FROM productorder po
+        LEFT JOIN product p ON po.pid = p.id
+        <where>
+            <if test="params.oid != null and params.oid != ''">
+                AND po.oid = #{params.oid}
+            </if>
+            <if test="params.pid != null">
+                AND po.pid = #{params.pid}
+            </if>
+        </where>
+    </select>
+<!--    <select id="selectPage" resultType="com.project.template.entity.Productorder"></select>-->
+
+</mapper>

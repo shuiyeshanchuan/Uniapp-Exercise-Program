@@ -1,0 +1,23 @@
+server:
+  port: 1000
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 100MB # 文件上传大小限制，设置最大值，不能超过该值，否则报错
+      max-request-size: 1000MB # 文件最大请求限制，用于批量上传
+
+  jackson: # Jackson库配置
+    date-format: "yyyy-MM-dd HH:mm:ss" # 设置日期格式为"年-月-日 时:分:秒"
+    serialization:
+      write-dates-as-timestamps: false # 关闭日期序列化为时间戳的功能
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+#  配置sql日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # typeEnumsPackage or type-enums-package 都可以
+  type-enums-package: com.project.template.enums
+
+resetPassword: 123456

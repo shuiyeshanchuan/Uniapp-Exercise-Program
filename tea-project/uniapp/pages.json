@@ -1,0 +1,144 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/welcome/welcome",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/product/product",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/myCart/myCart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/map/map",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/temp/temp",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "test页面",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"enableAnimation": true, // 启用动画
+				"animationType": "slide-in-right",
+				"animationDuration": 300
+			}
+		},
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"enableAnimation": true, // 启用动画
+				"animationType": "slide-in-left",
+				"animationDuration": 300
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		//去掉默认的标题信息 custom 定制
+		"navigationStyle": "custom",
+		"app-plus": {
+			"animationType": "slide-in-right", // 默认动画
+			"animationDuration": 300
+		}
+	},
+	"animation": {
+		"animationType": "slide-in-right", // 默认动画类型
+		"animationDuration": 300 // 动画持续时间，单位ms
+	},
+	"tabBar": {
+		// 默认文本颜色
+		"color": "#333333",
+		// 选中时的文本颜色
+		"selectedColor": "#9370DB",
+		// 背景色，使用半透明实现毛玻璃效果的基础
+		"backgroundColor": "rgba(255, 255, 255, 0.1)",
+		// 移除默认边框
+		"borderStyle": "none",
+		// 毛玻璃效果配置
+		"blurEffect": {
+			// extralight-最浅 light-浅色 dark-深色
+			"style": "extralight",
+			// 透明度 0-1，值越小越透明
+			"opacity": 0.8
+		},
+		// 设置tabBar高度
+		"height": "60px",
+		// 文字大小
+		"fontSize": "14px",
+		// 字体样式
+		"fontFamily": "楷体",
+		// 文字粗细
+		"fontWeight": "bold",
+		// 背景模糊程度
+		"backdropFilter": "blur(10px)",
+		// 顶部阴影效果
+		"boxShadow": "0 -1px 10px rgba(0, 0, 0, 0.05)",
+		// 底部导航列表
+		"list": [
+			{
+				"text": "喝一杯",
+				"pagePath": "pages/index/index"
+			},
+			{
+				"text": "选一杯",
+				"pagePath": "pages/product/product"
+			},
+			{
+				"text": "买一杯",
+				"pagePath": "pages/myCart/myCart"
+			},
+			{
+				"text": "查一杯",
+				"pagePath": "pages/my/my"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

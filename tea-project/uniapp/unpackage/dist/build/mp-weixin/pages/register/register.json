@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "enableAnimation": true,
+  "animationType": "slide-in-left",
+  "animationDuration": 300,
+  "usingComponents": {}
+}

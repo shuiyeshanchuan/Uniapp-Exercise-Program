@@ -1,0 +1,1 @@
+<view><button>123</button><button style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19;" size="default" type="default" hover-class="is-hover">按钮</button><textarea auto-height="{{true}}"></textarea><input class="uni-input" focus="{{true}}" placeholder="自动获得焦点"/></view>
